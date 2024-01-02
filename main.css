@@ -1,0 +1,46 @@
+html, body {
+  background-color: #1a1a1a;
+  overflow: hidden;
+}
+
+#wrapper {
+  aspect-ratio: 16/9;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 14.9% 1fr;
+  grid-template-rows: 9.1% 1fr;
+  grid-template-areas: "logo head" "side main";
+  gap: 1%;
+}
+#wrapper div {
+  border-radius: 3px;
+}
+#wrapper header {
+  grid-area: head;
+  background-color: #1f1f1f;
+  border-radius: 5px;
+}
+#wrapper #sidebar {
+  height: 98vh;
+  grid-area: side;
+  background-color: #1f1f1f;
+}
+#wrapper #main {
+  grid-area: main;
+  background-color: #1a1a1a;
+}
+#wrapper #main #map {
+  background-color: #242424;
+  height: 50px;
+  width: 50px;
+}
+#wrapper #logo {
+  background-color: #242424;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#wrapper #logo img {
+  max-height: 80%;
+  margin-left: -1.5vw;
+}/*# sourceMappingURL=main.css.map */
