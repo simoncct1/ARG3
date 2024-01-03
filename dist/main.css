@@ -100,6 +100,7 @@ html, body {
   align-items: center;
   justify-content: space-around;
   align-content: flex-end;
+  box-shadow: none;
 }
 #wrapper #logo img {
   max-width: 98%;
