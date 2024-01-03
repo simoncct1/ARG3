@@ -1,0 +1,18 @@
+$darker: #121212;
+$grey: #1E1E1E;
+$white: #FAFAFA;
+$darkpurple : #52057B;
+$midpurple : #892CDC;
+$lightpurple: #BC6FF1;
+$boxshadow: 0px 0px 5px 1px rgb(12, 12, 12);
+$innershadow: inset 0px 0px 5px 0px rgba(0,0,0,1);
+$gradient: linear-gradient(90deg, #52057B 0%,  #892CDC 70%, #BC6FF1 100%);
+$radial: radial-gradient(#52057B 0%,  #892CDC 70%, #BC6FF1 100%);
+.Accueil{
+ color: $midpurple !important;
+}
+.Accueil:hover{
+    padding-top: 20px !important;
+    padding-bottom: 10px !important;
+    background-image: none !important;
+}
