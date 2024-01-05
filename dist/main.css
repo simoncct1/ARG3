@@ -74,7 +74,7 @@ html, body {
 }
 #wrapper #sidebar .menu ul li {
   padding: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   padding-top: 20px;
   max-height: 30px;
   box-shadow: 0px 3px 3px 0px #0c0c0c;
@@ -99,6 +99,7 @@ html, body {
   display: inline-block;
   position: relative;
   width: 100%;
+  height: 100%;
 }
 #wrapper #main #accueil {
   height: 100%;
@@ -114,20 +115,21 @@ html, body {
   grid-area: 1/7/5/9;
   background-color: #161616;
   box-shadow: inset 0px 0px 4px 0px black;
+  display: block;
 }
 #wrapper #main #accueil .div3 {
-  grid-area: 3/1/6/3;
+  grid-area: 3/1/7/3;
+  background-color: #161616;
+  box-shadow: inset 0px 0px 4px 0px black;
+}
+#wrapper #main #accueil .div4 {
+  grid-area: 3/3/5/7;
   background-color: #161616;
   box-shadow: inset 0px 0px 4px 0px black;
   display: block;
 }
-#wrapper #main #accueil .div4 {
-  grid-area: 3/3/4/7;
-  background-color: #161616;
-  box-shadow: inset 0px 0px 4px 0px black;
-}
 #wrapper #main #accueil .div5 {
-  grid-area: 4/3/9/7;
+  grid-area: 5/3/9/7;
   background-color: #161616;
   box-shadow: inset 0px 0px 4px 0px black;
 }
