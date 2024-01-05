@@ -96,8 +96,9 @@ html, body {
   gap: 20px;
 }
 #wrapper #main div canvas {
+  display: inline-block;
+  position: relative;
   width: 100%;
-  height: 100%;
 }
 #wrapper #main #accueil {
   height: 100%;
@@ -115,17 +116,18 @@ html, body {
   box-shadow: inset 0px 0px 4px 0px black;
 }
 #wrapper #main #accueil .div3 {
-  grid-area: 3/1/6/2;
+  grid-area: 3/1/6/3;
   background-color: #161616;
   box-shadow: inset 0px 0px 4px 0px black;
+  display: block;
 }
 #wrapper #main #accueil .div4 {
-  grid-area: 3/2/9/7;
+  grid-area: 3/3/4/7;
   background-color: #161616;
   box-shadow: inset 0px 0px 4px 0px black;
 }
 #wrapper #main #accueil .div5 {
-  grid-area: 6/1/9/2;
+  grid-area: 4/3/9/7;
   background-color: #161616;
   box-shadow: inset 0px 0px 4px 0px black;
 }
