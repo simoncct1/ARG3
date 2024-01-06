@@ -106,7 +106,7 @@ display: grid;
     grid-area: main;
     background-color: $darker;
     padding: 20px;
-  div{
+  div#accueil{
     box-shadow: none;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -134,11 +134,39 @@ display: grid;
         background-color: $grey;
         box-shadow: $innershadow;
         display: block;
-    }
+        
+      }
+
       .div3{
         grid-area: 3 / 1 / 7 / 3;
         background-color: $grey;
         box-shadow: $innershadow;
+        display: flex;
+        div{
+          box-shadow: none;
+          background-color: #00000000;
+          .calendar__header{
+            padding-bottom: 10px;
+            margin-bottom: -4px;
+            box-shadow: 0px 3px 3px 0px rgb(12, 12, 12);
+            border-radius: 0;
+          }
+          .calendar__weekday{
+            font-size: 13pt;
+            opacity: 1 !important;
+            font-weight: 700 !important;
+          }
+          .calendar__monthyear{
+            font-size: 14pt;
+            text-transform: uppercase;
+          }
+          .calendar__days{
+            font-size: 12pt;
+          }
+          .calendar__day-bullet{
+            background-color: #FAFAFA;
+          }
+        }
     }
       .div4{
         grid-area: 3 / 3 / 5 / 7;
@@ -150,6 +178,111 @@ display: grid;
         grid-area: 5 / 3 / 9 / 7;
         background-color: $grey;
         box-shadow: $innershadow;
+        display: block;
+        .agents{
+          display: flex;
+          box-shadow: none;
+          justify-content: space-evenly;
+          align-items: center;
+          height: auto;
+          div{
+            max-height: 80%;
+            max-width: 17%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            list-style-type: none;
+            padding: 5px;
+            font-family: 'Montserrat';
+            font-size: 10pt;
+            text-wrap: wrap;
+            h2{
+              font-size: 12pt;
+              text-align: center;
+              font-weight: 600;
+              color: $lightpurple;
+              
+            }
+            ul {
+              padding: 0;
+              list-style-type: none;
+          }
+            li{
+              list-style-type: none;
+            }
+            img{
+              max-width: 70%;
+              border-radius: 50%;
+              border: double 2px transparent;
+              background-image: linear-gradient($darker, $darker), radial-gradient(circle at top left, #52057B 0%,  #892CDC 70%, #BC6FF1 100%);
+              background-origin: border-box;
+              background-clip: padding-box, border-box;
+            }
+          }
+        }
+        h1{
+          font-family: "Montserrat";
+          color: white;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 14pt;
+          margin-top: 15px;
+          padding-bottom: 10px;
+          box-shadow: 0px 3px 3px 0px rgb(12, 12, 12);
+          font-weight: 600;
+        }
+      }
+      .div6{
+        grid-area: 7 / 1 / 9 / 3;
+        background-color: $grey;
+        box-shadow: $innershadow;
+        h1{
+          font-family: "Montserrat";
+          color: white;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 14pt;
+          margin-top: 15px;
+          padding-bottom: 10px;
+          box-shadow: 0px 3px 3px 0px rgb(12, 12, 12);
+          font-weight: 600;
+        }
+        div{
+          box-shadow: none;
+          font-family: "Montserrat";
+          color: white;
+          text-align: center;
+        .event__name{
+          font-weight: 600;
+          color: $lightpurple;
+          font-size: 12pt;
+          padding: 8px;
+          padding-top: 0px;
+        }
+        .event__datestart, .event__dateend{
+          font-weight: 400;
+          font-size: 12pt;
+          padding: 5px;
+        }
+      }
+      }
+      .div7{
+        grid-area: 5 / 7 / 9 / 9;
+        background-color: $grey;
+        box-shadow: $innershadow;
+        h1{
+          font-family: "Montserrat";
+          color: white;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 14pt;
+          margin-top: 15px;
+          padding-bottom: 10px;
+          box-shadow: 0px 3px 3px 0px rgb(12, 12, 12);
+          font-weight: 600;
+        }
       }
     }
    

@@ -88,14 +88,14 @@ html, body {
   background-color: #121212;
   padding: 20px;
 }
-#wrapper #main div {
+#wrapper #main div#accueil {
   box-shadow: none;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
   gap: 20px;
 }
-#wrapper #main div canvas {
+#wrapper #main div#accueil canvas {
   display: inline-block;
   position: relative;
   width: 100%;
@@ -121,6 +121,32 @@ html, body {
   grid-area: 3/1/7/3;
   background-color: #161616;
   box-shadow: inset 0px 0px 4px 0px rgb(0, 0, 0);
+  display: flex;
+}
+#wrapper #main #accueil .div3 div {
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+#wrapper #main #accueil .div3 div .calendar__header {
+  padding-bottom: 10px;
+  margin-bottom: -4px;
+  box-shadow: 0px 3px 3px 0px rgb(12, 12, 12);
+  border-radius: 0;
+}
+#wrapper #main #accueil .div3 div .calendar__weekday {
+  font-size: 13pt;
+  opacity: 1 !important;
+  font-weight: 700 !important;
+}
+#wrapper #main #accueil .div3 div .calendar__monthyear {
+  font-size: 14pt;
+  text-transform: uppercase;
+}
+#wrapper #main #accueil .div3 div .calendar__days {
+  font-size: 12pt;
+}
+#wrapper #main #accueil .div3 div .calendar__day-bullet {
+  background-color: #FAFAFA;
 }
 #wrapper #main #accueil .div4 {
   grid-area: 3/3/5/7;
@@ -132,6 +158,110 @@ html, body {
   grid-area: 5/3/9/7;
   background-color: #161616;
   box-shadow: inset 0px 0px 4px 0px rgb(0, 0, 0);
+  display: block;
+}
+#wrapper #main #accueil .div5 .agents {
+  display: flex;
+  box-shadow: none;
+  justify-content: space-evenly;
+  align-items: center;
+  height: auto;
+}
+#wrapper #main #accueil .div5 .agents div {
+  max-height: 80%;
+  max-width: 17%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  list-style-type: none;
+  padding: 5px;
+  font-family: "Montserrat";
+  font-size: 10pt;
+  text-wrap: wrap;
+}
+#wrapper #main #accueil .div5 .agents div h2 {
+  font-size: 12pt;
+  text-align: center;
+  font-weight: 600;
+  color: #BC6FF1;
+}
+#wrapper #main #accueil .div5 .agents div ul {
+  padding: 0;
+  list-style-type: none;
+}
+#wrapper #main #accueil .div5 .agents div li {
+  list-style-type: none;
+}
+#wrapper #main #accueil .div5 .agents div img {
+  max-width: 70%;
+  border-radius: 50%;
+  border: double 2px transparent;
+  background-image: linear-gradient(#121212, #121212), radial-gradient(circle at top left, #52057B 0%, #892CDC 70%, #BC6FF1 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+#wrapper #main #accueil .div5 h1 {
+  font-family: "Montserrat";
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14pt;
+  margin-top: 15px;
+  padding-bottom: 10px;
+  box-shadow: 0px 3px 3px 0px rgb(12, 12, 12);
+  font-weight: 600;
+}
+#wrapper #main #accueil .div6 {
+  grid-area: 7/1/9/3;
+  background-color: #161616;
+  box-shadow: inset 0px 0px 4px 0px rgb(0, 0, 0);
+}
+#wrapper #main #accueil .div6 h1 {
+  font-family: "Montserrat";
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14pt;
+  margin-top: 15px;
+  padding-bottom: 10px;
+  box-shadow: 0px 3px 3px 0px rgb(12, 12, 12);
+  font-weight: 600;
+}
+#wrapper #main #accueil .div6 div {
+  box-shadow: none;
+  font-family: "Montserrat";
+  color: white;
+  text-align: center;
+}
+#wrapper #main #accueil .div6 div .event__name {
+  font-weight: 600;
+  color: #BC6FF1;
+  font-size: 12pt;
+  padding: 8px;
+  padding-top: 0px;
+}
+#wrapper #main #accueil .div6 div .event__datestart, #wrapper #main #accueil .div6 div .event__dateend {
+  font-weight: 400;
+  font-size: 12pt;
+  padding: 5px;
+}
+#wrapper #main #accueil .div7 {
+  grid-area: 5/7/9/9;
+  background-color: #161616;
+  box-shadow: inset 0px 0px 4px 0px rgb(0, 0, 0);
+}
+#wrapper #main #accueil .div7 h1 {
+  font-family: "Montserrat";
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14pt;
+  margin-top: 15px;
+  padding-bottom: 10px;
+  box-shadow: 0px 3px 3px 0px rgb(12, 12, 12);
+  font-weight: 600;
 }
 #wrapper #logo {
   display: flex;

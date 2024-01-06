@@ -50,7 +50,8 @@ var influence = new Chart(document.getElementById('acquisitions'), {
           color: "#FAFAFA",
           font: {
             size: 18,
-            family: 'Montserrat'
+            family: 'Montserrat',
+            weight: 600
           }
         }
       }
@@ -171,12 +172,12 @@ var pourcentage = new Chart(document.getElementById('pourcentage'), {
       },
       title: {
         display: true,
-        text: 'Historique de missions (%)',
+        text: 'Missions 2023-24',
         color: "#FAFAFA",
         font: {
           size: 18,
           family: 'Montserrat',
-          weight: 400
+          weight: 600
         }
       }
     },
@@ -208,7 +209,8 @@ var mixedChart = new Chart(document.getElementById('recrues'), {
           color: "#FAFAFA",
           font: {
             size: 14,
-            family: 'Montserrat'
+            family: 'Montserrat',
+            weight: 600
           }
         }
       }
@@ -249,5 +251,81 @@ var mixedChart = new Chart(document.getElementById('recrues'), {
     borderColor: "#FAFAFA",
     responsive: true,
     maintainAspectRatio: false
+  }
+}); //calendar 
+// var myCal = new Calendar({
+// id: "#calendar",
+// primaryColor: "#BC6FF1",
+// headerColor: "#FAFAFA",
+// weekdaysColor: "#FAFAFA",
+// fontFamilyHeader: 'Montserrat', 
+// fontFamilyWeekdays: 'Montserrat',
+// fontFamilyBody: "Montserrat",
+// customWeekdayValues : ["D", "L", "M", "M", "J", "V", "S"],
+//   eventsData: [
+//     {
+//       id: 1,
+//       name: "French class",
+//       start: "2020-12-07T06:00:00",
+//       end: "2020-12-09T20:30:00"
+//     },
+//     {
+//       id: 2,
+//       name: "Blockchain 101",
+//       start: "2020-12-20T10:00:00",
+//       end: "2026-12-20T11:30:00"
+//     }
+//   ]
+// });
+// myCal.setEventsData([
+//   {
+//     id: 1,
+//     name: "French class",
+//     start: "2020-12-07T06:00:00",
+//     end: "2020-12-09T20:30:00"
+//   },
+//   {
+//     id: 2,
+//     name: "Blockchain 101",
+//     start: "2020-12-20T10:00:00",
+//     end: "2026-12-20T11:30:00"
+//   }
+// ])
+
+var calB = new Calendar({
+  id: "#calendar",
+  primaryColor: "#BC6FF1",
+  headerColor: "#FAFAFA",
+  weekdaysColor: "#FAFAFA",
+  fontFamilyHeader: 'Montserrat',
+  fontFamilyWeekdays: 'Montserrat',
+  fontFamilyBody: "Montserrat",
+  customWeekdayValues: ["D", "L", "M", "M", "J", "V", "S"],
+  eventsData: [{
+    id: 1,
+    name: "118 ans",
+    start: "2024-02-07T06:00:00",
+    end: "2024-02-07T20:30:00"
+  }, {
+    id: 2,
+    name: "OP. SINQ.",
+    start: "2024-01-14T10:00:00",
+    end: "2024-01-19T11:30:00"
+  }],
+  dateChanged: function dateChanged(currentDate, events) {
+    var eventDisplay = document.getElementById("events-display");
+    var html = "Rien à la date sélectionnée";
+    events.forEach(function (event) {
+      var from = new Date(event.start).toLocaleString([], {
+        dateStyle: "medium",
+        timeStyle: "short"
+      });
+      var to = new Date(event.end).toLocaleString([], {
+        dateStyle: "medium",
+        timeStyle: "short"
+      });
+      html = "\n        <div class=\"event\">\n          <div class=\"event__name\">".concat(event.name, "</div>\n          <div class=\"event__datestart\">Du: ").concat(from, "</div>\n          <div class=\"event__dateend\">Au: ").concat(to, "</div>\n        </div>\n      ");
+    });
+    eventDisplay.innerHTML = html;
   }
 });

@@ -10,6 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@300&family=Staatliches&display=swap" rel="stylesheet">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/color-calendar/dist/css/theme-basic.css"
+/>
+    
     
 </head>
 
@@ -36,10 +41,55 @@
     <div id="main">
         <div id="accueil">
             <div class="div1"><canvas id="acquisitions"></canvas></div>
-            <div class="div2"></div>
-            <div class="div3"><canvas id="pourcentage"></canvas></div>
+            <div class="div2" ><canvas id="pourcentage"></canvas></div>
+            <div class="div3" id="calendar"></div>
             <div class="div4"><canvas id="recrues"></canvas></div>
-            <div class="div5"></div>
+            <div class="div5"><h1>Votre équipe</h1>
+            <div class="agents">
+                <div>
+                    <img src="/assets/Subtractfsdq.png" alt="">
+                     <h2>Agent 4C652035</h2>
+                     <ul>
+                        <li>Niveau : 1</li>
+                     </ul>
+                     <p>Statut : <span style="color:#52057B">occupé</span></p>
+                </div>
+                <div>
+                    <img src="/assets/Subtractfsdq.png"  alt="">
+                     <h2>Agent E86D6520</h2>
+                     <ul>
+                        <li>Niveau : 1</li>
+                     </ul>
+                     <p>Statut : <span style="color:#52057B">occupé</span></p>
+                </div>
+                <div>
+                    <img src="/assets/Subtractfsdq.png"  alt="">
+                     <h2>Agent 63686966</h2>
+                     <ul>
+                        <li>Niveau : 1</li>
+                     </ul>
+                     <p>Statut : <span style="color:#BC6FF1">disponible</span></p>
+                </div>
+                <div>
+                    <img src="/assets/Subtractfsdq.png"  alt="">
+                     <h2>Agent 66726520</h2>
+                     <ul>
+                        <li>Niveau : 2</li>
+                     </ul>
+                     <p>Statut : <span style="color:#52057B">occupé</span> </p>
+                </div>
+                <div>
+                    <img src="/assets/Subtractfsdq.png" alt="">
+                     <h2>Agent 6573742032</h2>
+                     <ul>
+                        <li>Niveau : 3</li>
+                     </ul>
+                     <p>Statut : <span style="color:#52057B">occupé</span></p>
+                </div>
+            </div>
+            </div>
+            <div class="div6" ><h1>évenements</h1><div id="events-display"></div></div>
+            <div class="div7"><h1>News</h1></div>
         </div>
         <!-- <div id="profil"></div>
         <div id="missions"></div>
@@ -48,6 +98,7 @@
 </div>
 </body>
 <script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/color-calendar/dist/bundle.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 <script src="accueil.js" type="module"></script>
