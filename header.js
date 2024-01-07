@@ -20,7 +20,7 @@ document.querySelector(".veille").addEventListener('click', function(e){
 //NEWS
 let titles = [];
 const output = document.querySelector("#news");
-const display = s => output.innerText = s;
+const display = s => output.innerHTML = '<span style="color:#BC6FF1">Actualité : </span>' + s;
 axios.get('https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=jzelOxun4r6TDK56JVOGDAKFbLZ0AE6p')
     .then(function(response) {
         for (let elem of response.data.results) {
@@ -30,10 +30,10 @@ axios.get('https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=jzelO
             return (title, i) => {
               setTimeout(() => {
                 display(title);
-              }, i * 5000);
+              }, i * 10000);
             }
           };
-          
+
           titles.forEach(delayLoop(display, 1000));
     })
     .catch(function(error) {

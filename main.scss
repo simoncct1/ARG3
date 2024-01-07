@@ -126,25 +126,22 @@ display: grid;
   font-family: 'Montserrat', sans-serif;
   display: flex;
   font-size: 14pt;
-  font-weight: 600;
+  font-weight: 500;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   #news{
-    font-size: 12pt;
-    box-shadow: $boxshadow;
+    font-size: 14pt;
     padding: 10px;
     border-radius: 0;
-    background-color: $darker;
-    width: 40%;
+    width: 60%;
     text-wrap: nowrap;
     overflow: hidden;
   }
   div{
     padding: 10px;
     border-radius: 0;
-    background-color: $darker;
- 
+    box-shadow: none;
     img{
       max-height: 22pt;
       padding: 10px;

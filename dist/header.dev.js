@@ -22,7 +22,7 @@ var titles = [];
 var output = document.querySelector("#news");
 
 var display = function display(s) {
-  return output.innerText = s;
+  return output.innerHTML = '<span style="color:#BC6FF1">Actualité : </span>' + s;
 };
 
 axios.get('https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=jzelOxun4r6TDK56JVOGDAKFbLZ0AE6p').then(function (response) {
@@ -54,7 +54,7 @@ axios.get('https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=jzelO
     return function (title, i) {
       setTimeout(function () {
         display(title);
-      }, i * 5000);
+      }, i * 10000);
     };
   };
 
