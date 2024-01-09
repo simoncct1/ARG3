@@ -253,44 +253,6 @@ var mixedChart = new Chart(document.getElementById('recrues'), {
     maintainAspectRatio: false
   }
 }); //calendar 
-// var myCal = new Calendar({
-// id: "#calendar",
-// primaryColor: "#BC6FF1",
-// headerColor: "#FAFAFA",
-// weekdaysColor: "#FAFAFA",
-// fontFamilyHeader: 'Montserrat', 
-// fontFamilyWeekdays: 'Montserrat',
-// fontFamilyBody: "Montserrat",
-// customWeekdayValues : ["D", "L", "M", "M", "J", "V", "S"],
-//   eventsData: [
-//     {
-//       id: 1,
-//       name: "French class",
-//       start: "2020-12-07T06:00:00",
-//       end: "2020-12-09T20:30:00"
-//     },
-//     {
-//       id: 2,
-//       name: "Blockchain 101",
-//       start: "2020-12-20T10:00:00",
-//       end: "2026-12-20T11:30:00"
-//     }
-//   ]
-// });
-// myCal.setEventsData([
-//   {
-//     id: 1,
-//     name: "French class",
-//     start: "2020-12-07T06:00:00",
-//     end: "2020-12-09T20:30:00"
-//   },
-//   {
-//     id: 2,
-//     name: "Blockchain 101",
-//     start: "2020-12-20T10:00:00",
-//     end: "2026-12-20T11:30:00"
-//   }
-// ])
 
 var calB = new Calendar({
   id: "#calendar",

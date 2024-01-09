@@ -78,8 +78,8 @@ html, body {
 #wrapper #sidebar .menu ul img {
   height: 5px;
 }
-#wrapper #main.veille {
-  display: none;
+#wrapper #accueil.veille {
+  display: none !important;
 }
 #wrapper #logo {
   display: flex;
@@ -104,7 +104,7 @@ html, body {
   font-size: 14pt;
   font-weight: 500;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 #wrapper #head #news {
@@ -129,6 +129,9 @@ html, body {
 #wrapper #head div img:hover {
   transition: 0.3s;
   filter: brightness(0) saturate(100%) invert(73%) sepia(51%) saturate(6312%) hue-rotate(231deg) brightness(95%) contrast(98%);
+}
+#wrapper #head div .veilleok {
+  filter: brightness(0) saturate(100%) invert(73%) sepia(51%) saturate(6312%) hue-rotate(231deg) brightness(95%) contrast(98%) !important;
 }
 #wrapper #main {
   grid-area: main;
@@ -301,6 +304,9 @@ html, body {
   background-color: #161616;
   box-shadow: inset 0px 0px 4px 0px black;
 }
+#wrapper #main #accueil .div7 div {
+  box-shadow: none;
+}
 #wrapper #main #accueil .div7 h1 {
   font-family: "Montserrat";
   color: white;
@@ -311,4 +317,121 @@ html, body {
   padding-bottom: 10px;
   box-shadow: 0px 3px 3px 0px #0c0c0c;
   font-weight: 600;
+}
+#wrapper #main #accueil .div7 h2 {
+  font-family: "Montserrat";
+  color: white;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 13pt;
+  padding-bottom: 10px;
+  box-shadow: 0px 3px 3px 0px #0c0c0c;
+  font-weight: 600;
+}
+
+#code {
+  display: none;
+}
+
+#code.active {
+  height: 100vh;
+  width: 100vw;
+  background-color: #121212b9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+}
+#code.active form {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: #121212;
+  box-shadow: 0px 0px 5px 1px #0c0c0c;
+  width: 15%;
+  height: auto;
+  color: #FAFAFA;
+  font-family: "Montserrat";
+  font-size: 16pt;
+  margin: auto;
+  margin-top: 10vh;
+  padding: 20px;
+  border-radius: 10px;
+}
+#code.active form input {
+  border-radius: 10px;
+  background-color: #161616;
+  box-shadow: inset 0px 0px 4px 0px black;
+  border: none;
+  color: white;
+  font-size: 12pt;
+  padding: 10px;
+  font-family: "Montserrat";
+}
+#code.active form input:focus-within {
+  border-color: #BC6FF1;
+}
+#code.active form button {
+  border-radius: 10px;
+  background-color: #161616;
+  box-shadow: inset 0px 0px 4px 0px black;
+  border: none;
+  color: #BC6FF1;
+  font-size: 12pt;
+  padding: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+#code.active form button:hover {
+  background-color: #FAFAFA;
+  box-shadow: none;
+}
+#code.active #indice {
+  display: none;
+}
+#code.active #indice.active {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  color: #FAFAFA;
+  font-family: "Montserrat";
+  font-size: 18pt;
+  font-weight: 600;
+  margin: auto;
+  margin-top: 10vh;
+  padding: 20px;
+  border-radius: 10px;
+}
+#code.active #indice.active form {
+  width: 15%;
+  margin: auto;
+  box-shadow: none;
+  background-color: #00000000;
+  padding: 20px;
+}
+#code.active #indice.active button {
+  border-radius: 10px;
+  background-color: #161616;
+  box-shadow: inset 0px 0px 4px 0px black;
+  border: none;
+  color: #BC6FF1;
+  font-size: 12pt;
+  padding: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+#code.active #indice.active button:hover {
+  background-color: #FAFAFA;
+  box-shadow: none;
 }
