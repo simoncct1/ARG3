@@ -34,7 +34,7 @@ var error = [{
   "indice": "Il y en a un peu plus"
 }, {
   "message": "a4ccdb52740e857f",
-  "indice": "Pas des collaborateurs"
+  "indice": "Pas des employés"
 }, {
   "message": "c92acdcae786d1dc",
   "indice": "Turnover"
@@ -76,14 +76,14 @@ var error = [{
   "indice": "Où?"
 }, {
   "message": "38cdfa01267b4aa5",
-  "indice": "Shenzhen"
+  "indice": "Shanghai"
 }, {
   "message": "8f1a5265ae802a65",
   "indice": "Gratte-ciel"
 }, {
   //solfin
   "message": "fdd0000c5ed009c7",
-  "indice": "KK100"
+  "indice": "JINMAO"
 }];
 var form = document.getElementById('myForm');
 form.addEventListener('submit', function (event) {
@@ -162,7 +162,7 @@ axios.get('https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=jzelO
     return function (title, i) {
       setTimeout(function () {
         display(title);
-      }, i * 10000);
+      }, i * 20000);
     };
   };
 

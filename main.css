@@ -94,7 +94,7 @@ html, body {
 #wrapper #sidebar .menu ul img {
   height: 5px;
 }
-#wrapper #accueil.veille {
+#wrapper #accueil.veille div {
   display: none !important;
 }
 #wrapper #logo {
@@ -175,6 +175,8 @@ html, body {
 #wrapper #main #accueil {
   height: 100%;
   width: auto;
+  background-image: url("/assets/BCKPROV.png");
+  background-size: 100% 100%;
 }
 #wrapper #main #accueil .div1 {
   grid-area: 1/1/3/7;

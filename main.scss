@@ -115,7 +115,7 @@ display: grid;
     
  }
 
- #accueil.veille{
+ #accueil.veille div{
   display:none !important;
  }
 //LOGO
@@ -186,6 +186,7 @@ display: grid;
     grid-area: main;
     background-color: $darker;
     padding: 20px;
+ 
   div#accueil, div#profil, div#missions{
     box-shadow: none;
     display: grid;
@@ -203,6 +204,8 @@ display: grid;
     #accueil{
       height: 100%;
       width: auto;
+      background-image: url('/assets/BCKPROV.png');
+      background-size: 100% 100%;
       .div1{
         grid-area: 1 / 1 / 3 / 7;
           background-color: $grey;
