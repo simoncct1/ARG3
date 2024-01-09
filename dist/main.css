@@ -75,6 +75,22 @@ html, body {
   box-shadow: 0px 3px 3px 0px #0c0c0c;
   transition: background-image 2s ease-in-out, padding 0.2s ease-in-out;
 }
+#wrapper #sidebar .menu ul li.urgent {
+  filter: blur(1);
+  background-color: #BC6FF1;
+  color: transparent;
+  text-shadow: 0 0 3px #ffffff;
+}
+#wrapper #sidebar .menu ul li.urgent:hover {
+  filter: blur(1);
+  background-color: #BC6FF1;
+  color: transparent;
+  text-shadow: 0 0 3px #ffffff;
+  padding: 10px;
+  padding-bottom: 15px;
+  padding-top: 20px;
+  background-image: none;
+}
 #wrapper #sidebar .menu ul img {
   height: 5px;
 }
@@ -115,6 +131,11 @@ html, body {
   text-wrap: nowrap;
   overflow: hidden;
 }
+#wrapper #head #datehelp {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 #wrapper #head div {
   padding: 10px;
   border-radius: 0;
@@ -138,14 +159,14 @@ html, body {
   background-color: #121212;
   padding: 20px;
 }
-#wrapper #main div#accueil {
+#wrapper #main div#accueil, #wrapper #main div#profil, #wrapper #main div#missions {
   box-shadow: none;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
   gap: 20px;
 }
-#wrapper #main div#accueil canvas {
+#wrapper #main div#accueil canvas, #wrapper #main div#profil canvas, #wrapper #main div#missions canvas {
   display: inline-block;
   position: relative;
   width: 100%;
@@ -236,7 +257,7 @@ html, body {
 #wrapper #main #accueil .div5 .agents div h2 {
   font-size: 12pt;
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
   color: #BC6FF1;
 }
 #wrapper #main #accueil .div5 .agents div ul {
@@ -288,7 +309,7 @@ html, body {
   text-align: center;
 }
 #wrapper #main #accueil .div6 div .event__name {
-  font-weight: 600;
+  font-weight: 500;
   color: #BC6FF1;
   font-size: 12pt;
   padding: 8px;
@@ -299,15 +320,31 @@ html, body {
   font-size: 12pt;
   padding: 5px;
 }
+#wrapper #main #accueil .div7::-webkit-scrollbar {
+  display: none;
+}
 #wrapper #main #accueil .div7 {
   grid-area: 5/7/9/9;
   background-color: #161616;
   box-shadow: inset 0px 0px 4px 0px black;
+  overflow: scroll;
+  scrollbar-width: none;
 }
 #wrapper #main #accueil .div7 div {
   box-shadow: none;
+  height: auto;
+  box-shadow: 0px 3px 3px 0px #0c0c0c;
+  color: #FAFAFA;
+  font-family: "Montserrat";
+  font-size: 13pt;
+  scrollbar-width: none;
+  padding: 10px;
+  border-radius: 0;
+  padding-top: 0;
+  line-height: 1.4;
 }
 #wrapper #main #accueil .div7 h1 {
+  position: sticky;
   font-family: "Montserrat";
   color: white;
   text-align: center;
@@ -320,13 +357,11 @@ html, body {
 }
 #wrapper #main #accueil .div7 h2 {
   font-family: "Montserrat";
-  color: white;
+  color: #BC6FF1;
   text-align: left;
   text-transform: uppercase;
   font-size: 13pt;
-  padding-bottom: 10px;
-  box-shadow: 0px 3px 3px 0px #0c0c0c;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 #code {
@@ -385,7 +420,7 @@ html, body {
   padding-left: 12px;
   padding-right: 12px;
   font-family: "Montserrat";
-  font-weight: 600;
+  font-weight: 500;
 }
 #code.active form button:hover {
   background-color: #FAFAFA;
@@ -405,7 +440,7 @@ html, body {
   color: #FAFAFA;
   font-family: "Montserrat";
   font-size: 18pt;
-  font-weight: 600;
+  font-weight: 500;
   margin: auto;
   margin-top: 10vh;
   padding: 20px;
@@ -429,9 +464,67 @@ html, body {
   padding-left: 12px;
   padding-right: 12px;
   font-family: "Montserrat";
-  font-weight: 600;
+  font-weight: 500;
 }
 #code.active #indice.active button:hover {
+  background-color: #FAFAFA;
+  box-shadow: none;
+}
+
+#accesurgent {
+  display: none;
+  position: absolute;
+  margin: auto;
+  width: 99%;
+  height: 98%;
+  z-index: 1000;
+  background-color: #121212b9;
+}
+#accesurgent form {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: #121212;
+  box-shadow: 0px 0px 5px 1px #0c0c0c;
+  width: 50%;
+  height: auto;
+  color: #FAFAFA;
+  font-family: "Montserrat";
+  font-size: 16pt;
+  margin: auto;
+  margin-top: 10vh;
+  padding: 10px;
+  border-radius: 10px;
+}
+#accesurgent form input {
+  border-radius: 10px;
+  background-color: #161616;
+  box-shadow: inset 0px 0px 4px 0px black;
+  border: none;
+  color: white;
+  font-size: 12pt;
+  padding: 10px;
+  font-family: "Montserrat";
+}
+#accesurgent form input:focus-within {
+  border-color: #BC6FF1;
+}
+#accesurgent form button {
+  border-radius: 10px;
+  background-color: #161616;
+  box-shadow: inset 0px 0px 4px 0px black;
+  border: none;
+  color: #BC6FF1;
+  font-size: 12pt;
+  padding: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-family: "Montserrat";
+  font-weight: 500;
+}
+#accesurgent form button:hover {
   background-color: #FAFAFA;
   box-shadow: none;
 }

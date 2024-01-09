@@ -11,10 +11,15 @@ function getDate() {
 }
 
 getDate();
-setInterval(getDate, 60000); //LOGOS
+setInterval(getDate, 50000); //LOGOS
 
+document.querySelector(".logout").addEventListener('click', function (e) {
+  window.location.replace('https://www.colombophiliefr.com');
+});
 document.querySelector(".veille").addEventListener('click', function (e) {
   document.getElementById("accueil").classList.toggle('veille');
+  document.getElementById("profil").classList.toggle('veille');
+  document.getElementById("missions").classList.toggle('veille');
   this.classList.toggle('veilleok');
 });
 document.querySelector(".helper").addEventListener('click', function (e) {
@@ -71,14 +76,14 @@ var error = [{
   "indice": "Où?"
 }, {
   "message": "38cdfa01267b4aa5",
-  "indice": "Chine"
+  "indice": "Shenzhen"
 }, {
   "message": "8f1a5265ae802a65",
-  "indice": "Fleur"
+  "indice": "Gratte-ciel"
 }, {
   //solfin
   "message": "fdd0000c5ed009c7",
-  "indice": "Sunflower"
+  "indice": "KK100"
 }];
 var form = document.getElementById('myForm');
 form.addEventListener('submit', function (event) {
@@ -94,7 +99,7 @@ form.addEventListener('submit', function (event) {
       var elem = _step.value;
 
       if (elem.message == input) {
-        indice.innerHTML += elem.indice;
+        indice.innerHTML += 'Indice : ' + elem.indice;
       }
     }
   } catch (err) {
@@ -110,6 +115,12 @@ form.addEventListener('submit', function (event) {
         throw _iteratorError;
       }
     }
+  }
+
+  console.log(indice.innerHTML);
+
+  if (indice.innerHTML == '') {
+    indice.innerHTML += 'Code inconnu';
   }
 
   document.getElementById("indice").classList.toggle('active');
