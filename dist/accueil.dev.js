@@ -45,15 +45,19 @@ var influence = new Chart(document.getElementById('acquisitions'), {
   type: 'line',
   options: {
     plugins: {
-      legend: {
-        labels: {
-          color: "#FAFAFA",
-          font: {
-            size: 18,
-            family: 'Montserrat',
-            weight: 600
-          }
+      title: {
+        display: true,
+        text: 'Niveau d\'influence',
+        color: "#FAFAFA",
+        font: {
+          size: 18,
+          family: 'Montserrat',
+          weight: 600
         }
+      },
+      legend: {
+        display: false,
+        labels: {}
       }
     },
     "responsive": true,
@@ -117,6 +121,8 @@ var data2 = {
     label: 'Missions de la F.N.D.P',
     data: [61, 12, 8],
     backgroundColor: ['#52057B', '#892CDC', '#BC6FF1'],
+    borderColor: "none",
+    borderWidth: 0,
     hoverOffset: 4
   }]
 };
@@ -172,7 +178,7 @@ var pourcentage = new Chart(document.getElementById('pourcentage'), {
       },
       title: {
         display: true,
-        text: 'Missions 2023-24',
+        text: 'Missions 2023-2024',
         color: "#FAFAFA",
         font: {
           size: 18,
@@ -246,9 +252,7 @@ var mixedChart = new Chart(document.getElementById('recrues'), {
         }
       }
     },
-    max: 90,
-    borderWidth: 2,
-    borderColor: "#FAFAFA",
+    max: 100,
     responsive: true,
     maintainAspectRatio: false
   }
@@ -256,7 +260,7 @@ var mixedChart = new Chart(document.getElementById('recrues'), {
 
 var calB = new Calendar({
   id: "#calendar",
-  primaryColor: "#BC6FF1",
+  primaryColor: "#FAFAFA",
   headerColor: "#FAFAFA",
   weekdaysColor: "#FAFAFA",
   fontFamilyHeader: 'Montserrat',
@@ -268,12 +272,13 @@ var calB = new Calendar({
     name: "120 ans",
     start: "2024-03-07T18:00:00",
     end: "2024-03-07T20:30:00"
-  }, {
-    id: 2,
-    name: "OP. SINQ.",
-    start: "2024-01-14T10:00:00",
-    end: "2024-01-19T11:30:00"
-  }, {
+  }, // {
+  //   id: 2,
+  //   name: "OP. SINCQ",
+  //   start: "2024-01-14T10:00:00",
+  //   end: "2024-01-19T11:30:00"
+  // },
+  {
     id: 3,
     name: "Un nouvel arrivant",
     start: "2024-01-25T10:00:00",
@@ -286,18 +291,18 @@ var calB = new Calendar({
   }, {
     id: 5,
     name: "Huit nouveaux arrivants",
-    start: "2023-11-06T10:00:00",
-    end: "2023-11-06T11:30:00"
+    start: "2023-12-06T10:00:00",
+    end: "2023-12-06T11:30:00"
   }, {
     id: 6,
     name: "Obsèques",
-    start: "2023-10-15T10:00:00",
-    end: "2023-10-15T13:30:00"
+    start: "2023-11-15T10:00:00",
+    end: "2023-11-15T13:30:00"
   }, {
     id: 7,
     name: "Sept nouveaux arrivants",
-    start: "2023-10-02T10:00:00",
-    end: "2023-10-02T11:30:00"
+    start: "2023-11-02T10:00:00",
+    end: "2023-11-02T11:30:00"
   }],
   dateChanged: function dateChanged(currentDate, events) {
     var eventDisplay = document.getElementById("events-display");

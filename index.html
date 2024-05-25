@@ -19,13 +19,13 @@
 </head>
 
 <body>
-<div id="accesurgent">
+<!-- <div id="accesurgent">
     <form action="">
-    <p>Vous avez besoin d'un accès de niveau 2 minimum pour accéder à cette page.</p>
+    <p>Vous avez besoin d'un accès de niveau 2 minimum pour accéder à cette page (voir "Mon profil").</p>
      <button type="submit">OK</button>
     </form>
-</div>
-<div id="code">
+</div> -->
+<!-- <div id="code">
     <form id="myForm" action="">
         <label for="error">Entrez le message d'erreur:</label><br>
         <input type="text" id="error" name="error"><br>
@@ -37,16 +37,24 @@
             <button type="submit">OK</button>
         </form>
     </div>
-</div>
+</div> -->
+<form class="log-in-form" action="https://api.conqueststories.be/login" id="login-form" method="post">
+    <label for="Email" class="field-label-contact">Email</label>
+    <input maxlength="256"  name="email" id="email" class="user-field w-input" type="email" autocomplete="username" required="">
+    <label for="Password" class="field-label-contact">Mot de passe</label>
+    <input maxlength="256"  name="password" id="password" class="user-field w-input" type="password" required="">
+    <span id='messageokok'></span> 
+    <input type="submit" id="conn" data-wait="Please wait..." class="w-users-userformbutton button-clair button-longin-signup w-button" value="Se connecter">
+  </form>
 <div id="wrapper">
     <div id="head">
         <div id="news"> </div>
         <div id="datehelp">
         <div id="datetime"></div>
         <div id="helpers">
-            <img class="helper" src="assets/help.svg" alt="" srcset="">
-            <img class="veille" src="assets/veille.svg" alt="" srcset="">
-            <img class="logout" src="assets/out.svg" alt="" srcset="">
+            <!-- <img class="helper" src="assets/help.svg" alt="" srcset="">
+            <img class="veille" src="assets/veille.svg" alt="" srcset=""> -->
+            <img id="deco" class="logout" src="assets/out.svg" alt="" srcset="">
         </div>
         </div>
     </div>
@@ -55,15 +63,15 @@
     </a>
     <div id="sidebar">
         <div class="profile">
-            <img src="/assets/Subtractfsdq.png" alt="">
-             <p class="name">Agent X</p>
+            <img src="/assets/Subtractfsdq.png" id="pp" alt="">
+             <p id="ndc"></p>
         </div>
          <div class="menu">
             <ul>
-                <li class="Accueil">Accueil</li>
-                <li class="Profil">Mon profil</li>
-                <li class="Missions">Mes missions</li>
-                <li class="urgent">Urgent</li>
+                <li id="Accueil">Accueil</li>
+                <li id="Profil">Mon profil</li>
+                <li id="Missions">Mes missions</li>
+                <!-- <li class="urgent">Urgent <img src="/assets/lock.svg" alt="" srcset="" style="height: 25px;"></li> -->
             </ul>
          </div>
     </div>
@@ -76,43 +84,33 @@
             <div class="div5"><h1>Votre équipe</h1>
             <div class="agents">
                 <div>
-                    <img src="/assets/Subtractfsdq.png" alt="">
+                    <img src="/assets/p5.png" alt="">
                      <h2>Agent<br/>4C6520</h2>
-                     <ul>
-                        <li>Niveau : 1</li>
-                     </ul>
+
                      <p>Statut : <span style="color:#52057B">occupé</span></p>
                 </div>
                 <div>
-                    <img src="/assets/Subtractfsdq.png"  alt="">
+                    <img src="/assets/p1.png"  alt="">
                      <h2>Agent<br/>E86D65</h2>
-                     <ul>
-                        <li>Niveau : 1</li>
-                     </ul>
+
+ 
                      <p>Statut : <span style="color:#52057B">occupé</span></p>
                 </div>
                 <div>
-                    <img src="/assets/Subtractfsdq.png"  alt="">
+                    <img src="/assets/p2.png"  alt="">
                      <h2>Agent<br/>11235</h2>
-                     <ul>
-                        <li>Niveau : 1</li>
-                     </ul>
+
                      <p>Statut : <span style="color:#BC6FF1">disponible</span></p>
                 </div>
                 <div>
-                    <img src="/assets/Subtractfsdq.png"  alt="">
+                    <img src="/assets/p3.png"  alt="">
                      <h2>Agent<br/>6QD265</h2>
-                     <ul>
-                        <li>Niveau : 2</li>
-                     </ul>
                      <p>Statut : <span style="color:#52057B">occupé</span> </p>
                 </div>
                 <div>
-                    <img src="/assets/Subtractfsdq.png" alt="">
+                    <img src="/assets/p4.png" alt="">
                      <h2>Agent<br/>65A3V4</h2>
-                     <ul>
-                        <li>Niveau : 3</li>
-                     </ul>
+
                      <p>Statut : <span style="color:#52057B">occupé</span></p>
                 </div>
             </div>
@@ -165,7 +163,34 @@
                 </div>
             </div>
         </div>
-        <div id="profil"><p>profil</p></div>
+        <div id="profil">
+            <div id="infos">
+                <h1>Vos infos</h1>
+                <div class="profile">
+                    <img src="/assets/Subtractfsdq.png" alt="">
+                     <p class="name">Agent X</p>
+                </div>
+            </div>
+            <div id="promo">
+                <h1>Demande d'accès</h1>
+                <form id="access" action="">
+                   
+                <div>
+                    <label for="code">Votre code:</label>
+                     <input type="text" name="code">
+                </div>
+                     <button type="submit">Valider</button>
+                </form>
+            </div>
+            <div id="contrat">
+                <h1>Votre contrat</h1>
+             
+            </div>
+            <div id="perf">
+                <h1>Indice de <br/> performance</h1>
+             
+            </div>
+        </div>
         <div id="missions"><p>missions</p></div>
         <div id="idk"></div> 
     </div>
@@ -178,4 +203,7 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="accueil.js" type="module"></script>
 <script src="header.js"></script>
+<script src="login.js"></script>
+<script src="db.js"></script>
+<script src="form.js"></script>
 </html>

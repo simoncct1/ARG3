@@ -14,33 +14,33 @@ getDate();
 setInterval(getDate, 50000); //LOGOS
 
 document.querySelector(".logout").addEventListener('click', function (e) {
-  window.location.replace('https://www.colombophiliefr.com');
-});
-document.querySelector(".veille").addEventListener('click', function (e) {
-  document.getElementById("accueil").classList.toggle('veille');
-  document.getElementById("profil").classList.toggle('veille');
-  document.getElementById("missions").classList.toggle('veille');
-  this.classList.toggle('veilleok');
-});
-document.querySelector(".helper").addEventListener('click', function (e) {
-  document.getElementById("code").classList.toggle('active');
-  this.classList.toggle('veilleok');
-});
+  window.location.replace('/index.html');
+}); // document.querySelector(".veille").addEventListener('click', function(e){
+//     document.getElementById("accueil").classList.toggle('veille');
+//     document.getElementById("profil").classList.toggle('veille');
+//     document.getElementById("missions").classList.toggle('veille');
+//     this.classList.toggle('veilleok');
+// })
+// document.querySelector(".helper").addEventListener('click', function(e){
+//     document.getElementById("code").classList.toggle('active');
+//     this.classList.toggle('veilleok');
+// })
+
 var error = [{
   "message": "899eb968fc8967ad",
-  "indice": "Les hommes mentent, les chiffres aussi"
+  "indice": "Cherchez le mauvais chiffre"
 }, {
   "message": "880ccb4bf132d864",
-  "indice": "Il y en a un peu plus"
+  "indice": "Il y en a un peu trop"
 }, {
   "message": "a4ccdb52740e857f",
-  "indice": "Pas des employés"
+  "indice": "Les ? membres du conseil"
 }, {
   "message": "c92acdcae786d1dc",
-  "indice": "Turnover"
+  "indice": "Fibonacci"
 }, {
   "message": "bf4f0ee0286608d8",
-  "indice": "Fibonacci"
+  "indice": "Multiplication du turnover"
 }, {
   //sol1
   "message": "6bb631489e466b8",
@@ -53,7 +53,7 @@ var error = [{
   "indice": "Et à leurs conséquences"
 }, {
   "message": "b49f8b2d85299d5",
-  "indice": "Regarder les sancions"
+  "indice": "Regarder les sanctions"
 }, {
   //sol2
   "message": "3d36b0605d04a5915",
@@ -84,23 +84,40 @@ var error = [{
   //solfin
   "message": "fdd0000c5ed009c7",
   "indice": "JINMAO"
-}];
-var form = document.getElementById('myForm');
-form.addEventListener('submit', function (event) {
-  event.preventDefault();
-  var indice = document.getElementById('indicet');
-  var input = document.getElementById('error').value;
+}]; // const form = document.getElementById('myForm');
+// form.addEventListener('submit', function(event) {
+// event.preventDefault();
+// const indice = document.getElementById('indicet');
+// const input = document.getElementById('error').value;
+// for (let elem of error) {
+//     if(elem.message == input){
+//        indice.innerHTML += 'Indice : ' + elem.indice;
+//     }
+// }
+// console.log(indice.innerHTML)
+// if(indice.innerHTML == ''){
+//     indice.innerHTML += 'Code inconnu'
+// }
+// document.getElementById("indice").classList.toggle('active');
+// });
+//NEWS
+
+var titles = [];
+var output = document.querySelector("#news");
+
+var display = function display(s) {
+  return output.innerHTML = '<span style="color:#BC6FF1">Actualité : </span>' + s;
+};
+
+axios.get('https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=jzelOxun4r6TDK56JVOGDAKFbLZ0AE6p').then(function (response) {
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
 
   try {
-    for (var _iterator = error[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    for (var _iterator = response.data.results[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
       var elem = _step.value;
-
-      if (elem.message == input) {
-        indice.innerHTML += 'Indice : ' + elem.indice;
-      }
+      titles.push(elem.title);
     }
   } catch (err) {
     _didIteratorError = true;
@@ -113,47 +130,6 @@ form.addEventListener('submit', function (event) {
     } finally {
       if (_didIteratorError) {
         throw _iteratorError;
-      }
-    }
-  }
-
-  console.log(indice.innerHTML);
-
-  if (indice.innerHTML == '') {
-    indice.innerHTML += 'Code inconnu';
-  }
-
-  document.getElementById("indice").classList.toggle('active');
-}); //NEWS
-
-var titles = [];
-var output = document.querySelector("#news");
-
-var display = function display(s) {
-  return output.innerHTML = '<span style="color:#BC6FF1">Actualité : </span>' + s;
-};
-
-axios.get('https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=jzelOxun4r6TDK56JVOGDAKFbLZ0AE6p').then(function (response) {
-  var _iteratorNormalCompletion2 = true;
-  var _didIteratorError2 = false;
-  var _iteratorError2 = undefined;
-
-  try {
-    for (var _iterator2 = response.data.results[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-      var elem = _step2.value;
-      titles.push(elem.title);
-    }
-  } catch (err) {
-    _didIteratorError2 = true;
-    _iteratorError2 = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
-        _iterator2["return"]();
-      }
-    } finally {
-      if (_didIteratorError2) {
-        throw _iteratorError2;
       }
     }
   }

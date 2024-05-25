@@ -14,40 +14,40 @@ function getDate(){
 
 //LOGOS
 document.querySelector(".logout").addEventListener('click', function(e){
-    window.location.replace('https://www.colombophiliefr.com')
+    window.location.replace('/index.html')
 })
-document.querySelector(".veille").addEventListener('click', function(e){
-    document.getElementById("accueil").classList.toggle('veille');
-    document.getElementById("profil").classList.toggle('veille');
-    document.getElementById("missions").classList.toggle('veille');
-    this.classList.toggle('veilleok');
-})
-document.querySelector(".helper").addEventListener('click', function(e){
-    document.getElementById("code").classList.toggle('active');
-    this.classList.toggle('veilleok');
-})
+// document.querySelector(".veille").addEventListener('click', function(e){
+//     document.getElementById("accueil").classList.toggle('veille');
+//     document.getElementById("profil").classList.toggle('veille');
+//     document.getElementById("missions").classList.toggle('veille');
+//     this.classList.toggle('veilleok');
+// })
+// document.querySelector(".helper").addEventListener('click', function(e){
+//     document.getElementById("code").classList.toggle('active');
+//     this.classList.toggle('veilleok');
+// })
 
 
 const error = [
     {
         "message": "899eb968fc8967ad",
-        "indice": "Les hommes mentent, les chiffres aussi"
+        "indice": "Cherchez le mauvais chiffre"
     },
     {
         "message": "880ccb4bf132d864",
-        "indice": "Il y en a un peu plus"
+        "indice": "Il y en a un peu trop"
     },
     {
         "message": "a4ccdb52740e857f",
-        "indice": "Pas des employés"
+        "indice": "Les ? membres du conseil"
     },
     {
         "message": "c92acdcae786d1dc",
-        "indice": "Turnover"
+        "indice": "Fibonacci"
     },
     {
         "message": "bf4f0ee0286608d8",
-        "indice": "Fibonacci"
+        "indice": "Multiplication du turnover"
     },
     {
         //sol1
@@ -64,7 +64,7 @@ const error = [
     },
     {
         "message": "b49f8b2d85299d5",
-        "indice": "Regarder les sancions"
+        "indice": "Regarder les sanctions"
     },
     {
         //sol2
@@ -108,24 +108,24 @@ const error = [
 ]
 
 
-const form = document.getElementById('myForm');
+// const form = document.getElementById('myForm');
 
-form.addEventListener('submit', function(event) {
-event.preventDefault();
-const indice = document.getElementById('indicet');
-const input = document.getElementById('error').value;
-for (let elem of error) {
-    if(elem.message == input){
-       indice.innerHTML += 'Indice : ' + elem.indice;
-    }
-}
-console.log(indice.innerHTML)
-if(indice.innerHTML == ''){
-    indice.innerHTML += 'Code inconnu'
-}
-document.getElementById("indice").classList.toggle('active');
+// form.addEventListener('submit', function(event) {
+// event.preventDefault();
+// const indice = document.getElementById('indicet');
+// const input = document.getElementById('error').value;
+// for (let elem of error) {
+//     if(elem.message == input){
+//        indice.innerHTML += 'Indice : ' + elem.indice;
+//     }
+// }
+// console.log(indice.innerHTML)
+// if(indice.innerHTML == ''){
+//     indice.innerHTML += 'Code inconnu'
+// }
+// document.getElementById("indice").classList.toggle('active');
 
-});
+// });
 //NEWS
 let titles = [];
 const output = document.querySelector("#news");

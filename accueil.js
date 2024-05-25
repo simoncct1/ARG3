@@ -21,14 +21,20 @@
       type: 'line',
       options: {
         plugins: { 
+          title: {
+            display: true,
+            text: 'Niveau d\'influence',
+            color: "#FAFAFA", 
+            font: {
+              size: 18,
+              family: 'Montserrat',
+              weight: 600
+            }
+        },
             legend: {
+              display: false,
               labels: {
-                color: "#FAFAFA", 
-                font: {
-                  size: 18,
-                  family: 'Montserrat',
-                  weight: 600
-                }
+               
               }
             }
           },
@@ -106,6 +112,8 @@ const data2 = {
         '#892CDC',
         '#BC6FF1'
       ],
+      borderColor: "none",
+      borderWidth: 0,
       hoverOffset: 4
     }]
   };
@@ -163,7 +171,7 @@ const data2 = {
           },
           title: {
             display: true,
-            text: 'Missions 2023-24',
+            text: 'Missions 2023-2024',
             color: "#FAFAFA",
             font: {
                 size: 18,
@@ -244,9 +252,7 @@ const data2 = {
                 beginAtZero: true
               }
             }},
-        max: 90,
-        borderWidth : 2,
-        borderColor: "#FAFAFA",
+        max: 100,
         responsive: true,
         maintainAspectRatio: false}
 });
@@ -255,7 +261,7 @@ const data2 = {
 
 let calB = new Calendar({
   id: "#calendar",
-  primaryColor: "#BC6FF1",
+  primaryColor: "#FAFAFA",
   headerColor: "#FAFAFA",
   weekdaysColor: "#FAFAFA",
   fontFamilyHeader: 'Montserrat', 
@@ -269,12 +275,12 @@ let calB = new Calendar({
       start: "2024-03-07T18:00:00",
       end: "2024-03-07T20:30:00"
     },
-    {
-      id: 2,
-      name: "OP. SINQ.",
-      start: "2024-01-14T10:00:00",
-      end: "2024-01-19T11:30:00"
-    },
+    // {
+    //   id: 2,
+    //   name: "OP. SINCQ",
+    //   start: "2024-01-14T10:00:00",
+    //   end: "2024-01-19T11:30:00"
+    // },
     {
       id: 3,
       name: "Un nouvel arrivant",
@@ -290,20 +296,20 @@ let calB = new Calendar({
     {
       id: 5,
       name: "Huit nouveaux arrivants",
-      start: "2023-11-06T10:00:00",
-      end: "2023-11-06T11:30:00"
+      start: "2023-12-06T10:00:00",
+      end: "2023-12-06T11:30:00"
     },
     {
       id: 6,
       name: "Obsèques",
-      start: "2023-10-15T10:00:00",
-      end: "2023-10-15T13:30:00"
+      start: "2023-11-15T10:00:00",
+      end: "2023-11-15T13:30:00"
     },
     {
       id: 7,
       name: "Sept nouveaux arrivants",
-      start: "2023-10-02T10:00:00",
-      end: "2023-10-02T11:30:00"
+      start: "2023-11-02T10:00:00",
+      end: "2023-11-02T11:30:00"
     },
   ], dateChanged: (currentDate, events) => {
     const eventDisplay = document.getElementById("events-display");
