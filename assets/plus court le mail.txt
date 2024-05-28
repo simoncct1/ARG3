@@ -1,15 +1,13 @@
 plus court le mail
 changement de curseur
-probleme affichage indice
 preselectionner chanlmps 
 +skip validation
-définitivement le système d'indice
 input pas visible
 améliorer l'input
 graduel !
 diminuer
 égaliser les margin
-supprimer système indice et veille
+
 
 
 cqaWZ$.a89wu

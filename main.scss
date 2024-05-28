@@ -488,16 +488,13 @@ display: grid;
         grid-area: 1 / 1 / 8 / 3;
       }
       #promo{
-        grid-area: 1 / 3 / 3 / 7;
+        grid-area: 1 / 3 / 8 / 6;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
       }
-      #contrat{
-        grid-area: 3 / 3 / 9 / 6;
-      }
       #perf{
-        grid-area: 1 / 7 / 4 / 9;
+        grid-area: 1 / 6 / 7 / 9;
       }
    }
  }
@@ -723,4 +720,65 @@ form{
     background-color: $white;
     box-shadow: none;
    }
+
+   
 }
+#promo{
+  form#regForm {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+  }
+  
+  /* Style the input fields */
+  input {
+    padding: 10px;
+    margin: 20px;
+    width: 70%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+  }
+  
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid {
+    background-color: #530101;
+  }
+  
+  /* Hide all steps by default: */
+  div.tab {
+    display: none !important;
+  }
+  
+  div.tab.active {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  /* Make circles that indicate the steps of the form: */
+  .step {
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  button{
+    margin-left: 0px;
+  }
+  /* Mark the active step: */
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: #04AA6D;
+  }
+  }
