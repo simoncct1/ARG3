@@ -1,19 +1,26 @@
 "use strict";
 
-var currentTab = 0; // Current tab is set to be the first tab (0)
+if (!localStorage.getItem("step")) {
+  localStorage.setItem("step", 0);
+}
+
+step = localStorage.getItem("step");
+var currentTab = step; // Current tab is set to be the first tab (0)
 
 showTab(currentTab); // Display the current tab
 
 function showTab(n) {
-  // This function will display the specified tab of the form ...
+  for (i = 0; i < parseInt(currentTab); i++) {
+    document.getElementsByClassName("step")[i].className += " finish";
+    console.log(i);
+  } // This function will display the specified tab of the form ...
+
+
+  console.log(n);
   var x = document.getElementsByClassName("tab");
   x[n].style = "display:block"; // ... and fix the Previous/Next buttons:
 
-  if (n == 0) {
-    document.getElementById("prevBtn").style.display = "none";
-  } else {
-    document.getElementById("prevBtn").style.display = "inline";
-  }
+  document.getElementById("prevBtn").style.display = "none";
 
   if (n == x.length - 1) {
     document.getElementById("nextBtn").innerHTML = "VALIDER";
@@ -33,7 +40,9 @@ function nextPrev(n) {
 
   x[currentTab].style.display = "none"; // Increase or decrease the current tab by 1:
 
-  currentTab = currentTab + n; // if you have reached the end of the form... :
+  currentTab = parseInt(currentTab) + n;
+  console.log(currentTab);
+  localStorage.setItem("step", currentTab); // if you have reached the end of the form... :
 
   if (currentTab >= x.length) {
     //...the form gets submitted:
@@ -56,7 +65,7 @@ function validateForm() {
 
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
-    if (y[i].value == "") {
+    if (y[i].value == "" || y[i].checkValidity() == false) {
       // add an "invalid" class to the field:
       y[i].className += " invalid"; // and set the current valid status to false:
 
@@ -86,4 +95,43 @@ function fixStepIndicator(n) {
 
   x[n].className += " active";
   y[n].className += " active";
+} //
+
+
+function get(eId) {
+  return document.getElementById(eId);
 }
+
+;
+
+function verify(eId, eVal) {
+  if (eVal != get(eId).value) {
+    alert('input must contain "' + eVal + '"!');
+    return false;
+  } else return true;
+}
+
+;
+
+function verifySubmit(eId, eVal) {
+  if (verify(eId, eVal)) get(eId).parentNode.submit();
+}
+
+; //
+//
+
+function lightUp() {
+  document.querySelector("#head").style = "background-color: #057b29";
+  setTimeout(function () {
+    document.querySelector("#head").style = "background-color: #161616";
+  }, 1000);
+}
+
+document.querySelector(".ndc").addEventListener('click', function () {
+  document.getElementById("inp1").setAttribute("value", "11GHJX");
+  lightUp();
+});
+document.querySelector(".ndc2").addEventListener('click', function () {
+  document.getElementById("inp1").setAttribute("value", "11GHJX");
+  lightUp();
+});

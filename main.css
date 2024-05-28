@@ -726,5 +726,9 @@ form button:hover {
   opacity: 1;
 }
 #promo .step.finish {
-  background-color: #04AA6D;
+  background-color: #057b29;
+}
+
+.ndc, .ndc2 {
+  cursor: crosshair !important;
 }/*# sourceMappingURL=main.css.map */

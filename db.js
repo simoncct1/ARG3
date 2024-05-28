@@ -30,8 +30,6 @@ fetch(url, {
     }else{
         document.getElementById("pp").setAttribute('src', "/assets/fndplogov2.png");
     }
-    document.getElementById("ndc").innerHTML = data.ndc;
-    document.getElementById("ndc2").innerHTML = data.ndc;
     localStorage.setItem("id", data.id);
     if(data.id){
         document.getElementById("login-form").style.display ="none"

@@ -779,6 +779,10 @@ form{
   
   /* Mark the steps that are finished and valid: */
   .step.finish {
-    background-color: #04AA6D;
+    background-color: #057b29;
   }
+  }
+
+  .ndc, .ndc2{
+    cursor:crosshair !important;
   }

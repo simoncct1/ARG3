@@ -33,11 +33,11 @@ fetch(url, {
 
   if (!pic) {
     document.getElementById("pp").setAttribute('src', 'https://api.conqueststories.be/image/' + data.avatar);
+    document.getElementById("pp2").setAttribute('src', 'https://api.conqueststories.be/image/' + data.avatar);
   } else {
-    document.getElementById("pp").setAttribute('src', pic);
+    document.getElementById("pp").setAttribute('src', "/assets/fndplogov2.png");
   }
 
-  document.getElementById("ndc").innerHTML = data.ndc;
   localStorage.setItem("id", data.id);
 
   if (data.id) {
