@@ -12,11 +12,9 @@ showTab(currentTab); // Display the current tab
 function showTab(n) {
   for (i = 0; i < parseInt(currentTab); i++) {
     document.getElementsByClassName("step")[i].className += " finish";
-    console.log(i);
   } // This function will display the specified tab of the form ...
 
 
-  console.log(n);
   var x = document.getElementsByClassName("tab");
   x[n].style = "display:block"; // ... and fix the Previous/Next buttons:
 

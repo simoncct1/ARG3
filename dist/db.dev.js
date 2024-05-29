@@ -29,8 +29,6 @@ fetch(url, {
 }).then(function (response) {
   return response.json();
 }).then(function (data) {
-  console.log(data);
-
   if (!pic) {
     document.getElementById("pp").setAttribute('src', 'https://api.conqueststories.be/image/' + data.avatar);
     document.getElementById("pp2").setAttribute('src', 'https://api.conqueststories.be/image/' + data.avatar);

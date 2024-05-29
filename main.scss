@@ -497,6 +497,87 @@ display: grid;
         grid-area: 1 / 6 / 7 / 9;
       }
    }
+   #missions{
+    height: 100%;
+    width: auto;
+    box-shadow: none;
+    font-family: "Montserrat";
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12pt;
+    margin-top: 15px;
+    padding-bottom: 10px;
+    box-shadow: 0px 3px 3px 0px rgb(12, 12, 12);
+    font-weight: 500;
+    h1{
+      position: sticky;
+      font-family: "Montserrat";
+      color: white;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 14pt;
+      margin-top: 15px;
+      padding-bottom: 10px;
+      margin-bottom: 0;
+      box-shadow: 0px 3px 3px 0px rgb(12, 12, 12);
+      font-weight: 600;
+    }
+      div{
+        background-color: $grey;
+        box-shadow: $innershadow;
+        display: block;
+        div{
+          border-radius: 0;
+        
+        }
+          img{
+            max-width: 40%;
+          }
+          p{
+            margin-bottom: 0;
+          }
+      }
+      #map{
+        grid-area: 1 / 1 / 6 / 5;
+        overflow: hidden;
+        cursor: crosshair !important;
+        p{
+         padding: 10px;
+         box-shadow: none;
+         margin: 0px !important;
+        }
+        .oper{
+          box-shadow: none;
+          margin: 0px !important;
+        }
+        #mapdisplay{
+          display: block !important;
+          width: 100%;
+          height: 100%;
+          box-shadow: none;
+          margin: 0px !important;
+          p#tutomap{
+            font-size: 10pt;
+            position: relative;
+            top: 61%;
+            left: 0%;
+            text-align: left;
+          }
+          p#open{
+            position: relative;
+            top: 30%;
+            margin: 0px !important;
+            font-weight: 600;
+            font-size: 24pt;
+           
+          } 
+          p:hover{
+            text-shadow: 0 0 10px #ffffff;
+          }
+        }
+      }
+   }
  }
 
 }

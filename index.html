@@ -10,34 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@300&family=Staatliches&display=swap" rel="stylesheet">
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/color-calendar/dist/css/theme-basic.css"
-/>
-    
-    
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/color-calendar/dist/css/theme-basic.css"/>
 </head>
 
 <body>
-<!-- <div id="accesurgent">
-    <form action="">
-    <p>Vous avez besoin d'un accès de niveau 2 minimum pour accéder à cette page (voir "Mon profil").</p>
-     <button type="submit">OK</button>
-    </form>
-</div> -->
-<!-- <div id="code">
-    <form id="myForm" action="">
-        <label for="error">Entrez le message d'erreur:</label><br>
-        <input type="text" id="error" name="error"><br>
-        <button type="submit">Valider</button>
-    </form>
-    <div id="indice">
-        <form action="">
-            <label id="indicet"></label><br>
-            <button type="submit">OK</button>
-        </form>
-    </div>
-</div> -->
 <form class="log-in-form" action="https://api.conqueststories.be/login" id="login-form" method="post">
     <label for="Email" class="field-label-contact">Email</label>
     <input maxlength="256"  name="email" id="email" class="user-field w-input" type="email" autocomplete="username" required="">
@@ -52,8 +28,6 @@
         <div id="datehelp">
         <div id="datetime"></div>
         <div id="helpers">
-            <!-- <img class="helper" src="assets/help.svg" alt="" srcset="">
-            <img class="veille" src="assets/veille.svg" alt="" srcset=""> -->
             <img id="deco" class="logout" src="assets/out.svg" alt="" srcset="">
         </div>
         </div>
@@ -221,11 +195,32 @@
              
             </div>
         </div>
-        <div id="missions"><p>missions</p></div>
+        <div id="missions">
+                <div id="map">
+                    <h1>Carte des missions</h1>
+                    <div class="oper">
+                        <p></p>
+                      </div>
+                      <div id="mapdisplay">
+                        <p id="open">ouvrir la carte</p>
+                        <p id="tutomap">Clic droit: rotation. <br> Clic gauche: déplacement.  <br> Cliquez sur les drapeaux pour avoir accès aux missions.</p>
+                      </div>
+                      
+                </div>
+        </div>
         <div id="idk"></div> 
     </div>
 </div>
 </body>
+<script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three/build/three.module.js",
+        "three/": "https://unpkg.com/three/"
+      }
+    }
+  </script>
+<script type='module' src="missions.js"></script>
 <script src="main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/color-calendar/dist/bundle.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
@@ -236,4 +231,5 @@
 <script src="login.js"></script>
 <script src="db.js"></script>
 <script src="form.js"></script>
+
 </html>

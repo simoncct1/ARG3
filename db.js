@@ -22,8 +22,7 @@ fetch(url, {
         'Authorization': 'Bearer ' + access_token,  
     }
 })  .then(response => response.json())
-.then(data => {
-    console.log(data);    
+.then(data => {  
     if(!pic){
         document.getElementById("pp").setAttribute('src','https://api.conqueststories.be/image/' + data.avatar);
         document.getElementById("pp2").setAttribute('src','https://api.conqueststories.be/image/' + data.avatar);
