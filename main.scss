@@ -90,7 +90,8 @@ display: grid;
        }
       p{
         margin : 15px;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
+        font-size: 20px;
       }   
    }
     .menu{
@@ -262,8 +263,7 @@ display: grid;
           box-shadow: none;
           background-color: #00000000;
           .calendar__header{
-            padding-bottom: 10px;
-            margin-bottom: -4px;
+            margin-bottom: -7px;
             border-radius: 0;
             scrollbar-width: none;
           }
@@ -351,6 +351,7 @@ display: grid;
               background-image: linear-gradient($darker, $darker), radial-gradient(circle at top left, #52057B 0%,  #892CDC 70%, #BC6FF1 100%);
               background-origin: border-box;
               background-clip: padding-box, border-box;
+              aspect-ratio: 1 / 1;
             }
           }
         }
@@ -445,6 +446,7 @@ display: grid;
   //PROFIL
    #profil{
     height: 100%;
+    margin-top: 0px !important;
     width: auto;
     box-shadow: none;
     font-family: "Montserrat";
@@ -452,10 +454,11 @@ display: grid;
     text-align: center;
     text-transform: uppercase;
     font-size: 12pt;
-    margin-top: 15px;
     padding-bottom: 10px;
     box-shadow: 0px 3px 3px 0px rgb(12, 12, 12);
     font-weight: 500;
+    display: flex;
+    flex-direction: column;
     h1{
       position: sticky;
       font-family: "Montserrat";
@@ -470,8 +473,9 @@ display: grid;
       font-weight: 600;
     }
       div{
+        margin-top: 0px !important;
         background-color: $grey;
-        box-shadow: $innershadow;
+        box-shadow: none;
         display: block;
         div{
           border-radius: 0;
@@ -479,19 +483,37 @@ display: grid;
         }
           img{
             max-width: 40%;
+            border-radius: 50%;
+            border: double 4px transparent;
+              background-image: linear-gradient($darker, $darker), radial-gradient(circle at top left, #52057B 0%,  #892CDC 70%, #BC6FF1 100%);
+              background-origin: border-box;
+              background-clip: padding-box, border-box;
+              aspect-ratio: 1 / 1;
           }
           p{
             margin-bottom: 0;
+            font-size: 16px;
           }
       }
       #infos{
-        grid-area: 1 / 1 / 8 / 3;
+        grid-area: 1 / 1 / 7 / 3;
+        box-shadow: $innershadow;
+        div{
+          background-color: #00000000;
+        }
+        .ppetndc{
+          margin-top: 15px !important;
+        }
       }
       #promo{
-        grid-area: 1 / 3 / 8 / 6;
+        grid-area: 1 / 3 / 9 / 6;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        box-shadow: $innershadow;
+        div{
+          background-color: #00000000;
+        }
       }
       #perf{
         grid-area: 1 / 6 / 7 / 9;
@@ -506,7 +528,6 @@ display: grid;
     text-align: center;
     text-transform: uppercase;
     font-size: 12pt;
-    margin-top: 15px;
     padding-bottom: 10px;
     box-shadow: 0px 3px 3px 0px rgb(12, 12, 12);
     font-weight: 500;
@@ -541,11 +562,13 @@ display: grid;
       #map{
         grid-area: 1 / 1 / 6 / 5;
         overflow: hidden;
-        cursor: crosshair !important;
+        cursor: url(https://cur.cursors-4u.net/symbols/sym-7/sym780.cur), auto !important;
         p{
          padding: 10px;
          box-shadow: none;
          margin: 0px !important;
+         position: absolute;
+         z-index: 5;
         }
         .oper{
           box-shadow: none;
@@ -555,14 +578,15 @@ display: grid;
           display: block !important;
           width: 100%;
           height: 100%;
-          box-shadow: none;
+          box-shadow: inset 0px 0px 4px 0px rgb(0, 0, 0);
           margin: 0px !important;
+          background-color: #00000000;
           p#tutomap{
             font-size: 10pt;
             position: relative;
-            top: 61%;
-            left: 0%;
-            text-align: left;
+            top: 0;
+            left: 0;
+            text-align: center;
           }
           p#open{
             position: relative;
@@ -576,6 +600,20 @@ display: grid;
             text-shadow: 0 0 10px #ffffff;
           }
         }
+      }
+      #stats{
+        grid-area: 6 / 1 / 9 / 5;
+        display: flex;
+        flex-direction: column;
+         .statscontainer{
+          max-height: 235px;
+          box-shadow: none;
+          background-color: #00000000;
+          padding: 10px;
+         }
+      }
+      #fiches{
+        grid-area: 1 / 5 / 9 / 9;
       }
    }
  }
@@ -811,33 +849,49 @@ form{
     flex-direction: column;
     align-items: center;
     padding: 0px;
+    margin-top: 5px;
+    
   }
   
   /* Style the input fields */
   input {
-    padding: 10px;
-    margin: 20px;
-    width: 70%;
-    font-size: 17px;
+    padding: 8px;
+    margin: 10px;
+    width: 50%;
+    font-size: 14px;
     font-family: Raleway;
     border: 1px solid #aaaaaa;
   }
-  
+  label{
+    font-size: 14px;
+  }
+
+  div{
+    margin-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
   /* Mark input boxes that gets an error on validation: */
   input.invalid {
     background-color: #530101;
   }
+
   
   /* Hide all steps by default: */
   div.tab {
     display: none !important;
+    input:first-of-type{
+      margin-top: 10px !important;
+    }
+    label:first-of-type{
+      margin-top: 10px;
+    }
   }
   
   div.tab.active {
     display: flex !important;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
   }
   /* Make circles that indicate the steps of the form: */
   .step {
@@ -849,9 +903,16 @@ form{
     border-radius: 50%;
     display: inline-block;
     opacity: 0.5;
+    margin-top: 10px;
   }
   button{
     margin-left: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 10px;
+  }
+  button:hover{
+    text-shadow: 0 0 10px #ffffff;
   }
   /* Mark the active step: */
   .step.active {
@@ -865,5 +926,5 @@ form{
   }
 
   .ndc, .ndc2{
-    cursor:crosshair !important;
+    cursor: url(https://cur.cursors-4u.net/symbols/sym-7/sym780.cur), auto !important;
   }

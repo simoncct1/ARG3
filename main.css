@@ -71,7 +71,8 @@ html, body {
 }
 #wrapper #sidebar .profile p {
   margin: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  font-size: 20px;
 }
 #wrapper #sidebar .menu {
   display: inline-flex;
@@ -231,8 +232,7 @@ html, body {
   background-color: rgba(0, 0, 0, 0);
 }
 #wrapper #main #accueil .div3 div .calendar__header {
-  padding-bottom: 10px;
-  margin-bottom: -4px;
+  margin-bottom: -7px;
   border-radius: 0;
   scrollbar-width: none;
 }
@@ -319,6 +319,7 @@ html, body {
   background-image: linear-gradient(#121212, #121212), radial-gradient(circle at top left, #52057B 0%, #892CDC 70%, #BC6FF1 100%);
   background-origin: border-box;
   background-clip: padding-box, border-box;
+  aspect-ratio: 1/1;
 }
 #wrapper #main #accueil .div5 h1 {
   font-family: "Montserrat";
@@ -407,6 +408,7 @@ html, body {
 }
 #wrapper #main #profil {
   height: 100%;
+  margin-top: 0px !important;
   width: auto;
   box-shadow: none;
   font-family: "Montserrat";
@@ -414,10 +416,11 @@ html, body {
   text-align: center;
   text-transform: uppercase;
   font-size: 12pt;
-  margin-top: 15px;
   padding-bottom: 10px;
   box-shadow: 0px 3px 3px 0px rgb(12, 12, 12);
   font-weight: 500;
+  display: flex;
+  flex-direction: column;
 }
 #wrapper #main #profil h1 {
   position: sticky;
@@ -433,8 +436,9 @@ html, body {
   font-weight: 600;
 }
 #wrapper #main #profil div {
+  margin-top: 0px !important;
   background-color: #161616;
-  box-shadow: inset 0px 0px 4px 0px rgb(0, 0, 0);
+  box-shadow: none;
   display: block;
 }
 #wrapper #main #profil div div {
@@ -442,18 +446,36 @@ html, body {
 }
 #wrapper #main #profil div img {
   max-width: 40%;
+  border-radius: 50%;
+  border: double 4px transparent;
+  background-image: linear-gradient(#121212, #121212), radial-gradient(circle at top left, #52057B 0%, #892CDC 70%, #BC6FF1 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  aspect-ratio: 1/1;
 }
 #wrapper #main #profil div p {
   margin-bottom: 0;
+  font-size: 16px;
 }
 #wrapper #main #profil #infos {
-  grid-area: 1/1/8/3;
+  grid-area: 1/1/7/3;
+  box-shadow: inset 0px 0px 4px 0px rgb(0, 0, 0);
+}
+#wrapper #main #profil #infos div {
+  background-color: rgba(0, 0, 0, 0);
+}
+#wrapper #main #profil #infos .ppetndc {
+  margin-top: 15px !important;
 }
 #wrapper #main #profil #promo {
-  grid-area: 1/3/8/6;
+  grid-area: 1/3/9/6;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  box-shadow: inset 0px 0px 4px 0px rgb(0, 0, 0);
+}
+#wrapper #main #profil #promo div {
+  background-color: rgba(0, 0, 0, 0);
 }
 #wrapper #main #profil #perf {
   grid-area: 1/6/7/9;
@@ -467,7 +489,6 @@ html, body {
   text-align: center;
   text-transform: uppercase;
   font-size: 12pt;
-  margin-top: 15px;
   padding-bottom: 10px;
   box-shadow: 0px 3px 3px 0px rgb(12, 12, 12);
   font-weight: 500;
@@ -502,12 +523,14 @@ html, body {
 #wrapper #main #missions #map {
   grid-area: 1/1/6/5;
   overflow: hidden;
-  cursor: crosshair !important;
+  cursor: url(https://cur.cursors-4u.net/symbols/sym-7/sym780.cur), auto !important;
 }
 #wrapper #main #missions #map p {
   padding: 10px;
   box-shadow: none;
   margin: 0px !important;
+  position: absolute;
+  z-index: 5;
 }
 #wrapper #main #missions #map .oper {
   box-shadow: none;
@@ -517,15 +540,16 @@ html, body {
   display: block !important;
   width: 100%;
   height: 100%;
-  box-shadow: none;
+  box-shadow: inset 0px 0px 4px 0px rgb(0, 0, 0);
   margin: 0px !important;
+  background-color: rgba(0, 0, 0, 0);
 }
 #wrapper #main #missions #map #mapdisplay p#tutomap {
   font-size: 10pt;
   position: relative;
-  top: 61%;
-  left: 0%;
-  text-align: left;
+  top: 0;
+  left: 0;
+  text-align: center;
 }
 #wrapper #main #missions #map #mapdisplay p#open {
   position: relative;
@@ -536,6 +560,20 @@ html, body {
 }
 #wrapper #main #missions #map #mapdisplay p:hover {
   text-shadow: 0 0 10px #ffffff;
+}
+#wrapper #main #missions #stats {
+  grid-area: 6/1/9/5;
+  display: flex;
+  flex-direction: column;
+}
+#wrapper #main #missions #stats .statscontainer {
+  max-height: 235px;
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px;
+}
+#wrapper #main #missions #fiches {
+  grid-area: 1/5/9/9;
 }
 
 #code {
@@ -767,14 +805,22 @@ form button:hover {
   flex-direction: column;
   align-items: center;
   padding: 0px;
+  margin-top: 5px;
 }
 #promo input {
-  padding: 10px;
-  margin: 20px;
-  width: 70%;
-  font-size: 17px;
+  padding: 8px;
+  margin: 10px;
+  width: 50%;
+  font-size: 14px;
   font-family: Raleway;
   border: 1px solid #aaaaaa;
+}
+#promo label {
+  font-size: 14px;
+}
+#promo div {
+  margin-top: 0px !important;
+  padding-bottom: 0px !important;
 }
 #promo input.invalid {
   background-color: #530101;
@@ -782,11 +828,17 @@ form button:hover {
 #promo div.tab {
   display: none !important;
 }
+#promo div.tab input:first-of-type {
+  margin-top: 10px !important;
+}
+#promo div.tab label:first-of-type {
+  margin-top: 10px;
+}
 #promo div.tab.active {
   display: flex !important;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
 }
 #promo .step {
   height: 10px;
@@ -797,9 +849,16 @@ form button:hover {
   border-radius: 50%;
   display: inline-block;
   opacity: 0.5;
+  margin-top: 10px;
 }
 #promo button {
   margin-left: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 10px;
+}
+#promo button:hover {
+  text-shadow: 0 0 10px #ffffff;
 }
 #promo .step.active {
   opacity: 1;
@@ -809,5 +868,5 @@ form button:hover {
 }
 
 .ndc, .ndc2 {
-  cursor: crosshair !important;
+  cursor: url(https://cur.cursors-4u.net/symbols/sym-7/sym780.cur), auto !important;
 }/*# sourceMappingURL=main.css.map */

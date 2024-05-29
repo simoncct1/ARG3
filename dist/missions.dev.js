@@ -137,27 +137,26 @@ document.getElementById('map').addEventListener('click', function (e) {
       });
     }
   }, function onError(err) {});
-  var light = new THREE.PointLight(0xffffff, 8, 1800);
+  var light = new THREE.PointLight(0xffffff, 20, 1800);
   light.position.set(0, 10, 0);
   scene.add(light);
-  var light4 = new THREE.PointLight(0xDC143C, 7, 1800);
+  var light4 = new THREE.PointLight(0xBC6FF1, 15, 1800);
   light4.position.set(0, 10, 0);
   scene.add(light4);
-  var light2 = new THREE.PointLight(0xDC143C, 7, 1800);
+  var light2 = new THREE.PointLight(0xBC6FF1, 15, 1800);
   light2.position.set(-20, 10, 0);
   scene.add(light2);
-  var light3 = new THREE.PointLight(0xDC143C, 7, 1800);
+  var light3 = new THREE.PointLight(0xBC6FF1, 15, 1800);
   light3.position.set(20, 10, 0);
   scene.add(light3);
-  var interactionManager = new _threeInteractive.InteractionManager(renderer, camera, renderer.domElement); //control
-
+  var interactionManager = new _threeInteractive.InteractionManager(renderer, camera, renderer.domElement);
   var controls = new _OrbitControls.OrbitControls(camera, renderer.domElement);
   controls.mouseButtons = {
     LEFT: THREE.MOUSE.PAN,
     MIDDLE: THREE.MOUSE.DOLLY,
     RIGHT: THREE.MOUSE.ROTATE
   };
-  controls.update(); // function for re-rendering/animating the scene
+  controls.update();
 
   function tick() {
     requestAnimationFrame(tick);
@@ -167,4 +166,32 @@ document.getElementById('map').addEventListener('click', function (e) {
   tick();
 }, {
   once: true
+}); // stats
+
+var ctx = document.getElementById("statspersos");
+var myChart = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Missions réussies', 'Missions en cours', 'Missions échouées'],
+    datasets: [{
+      data: [17, 5, 3],
+      backgroundColor: ['#52057B', '#892CDC', '#BC6FF1'],
+      borderColor: "none",
+      borderWidth: 0
+    }]
+  },
+  options: {
+    cutoutPercentage: 40,
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: true,
+        labels: {
+          color: 'rgb(255,255,255)',
+          position: 'left'
+        }
+      }
+    }
+  }
 });

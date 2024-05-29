@@ -171,7 +171,7 @@ const data2 = {
           },
           title: {
             display: true,
-            text: 'Missions 2023-2024',
+            text: 'Performances globales',
             color: "#FAFAFA",
             font: {
                 size: 18,

@@ -128,16 +128,16 @@ document.getElementById('map').addEventListener('click',function(e){
      }
     );
 
-   const light = new THREE.PointLight( 0xffffff, 8, 1800 );
+   const light = new THREE.PointLight( 0xffffff, 20, 1800 );
    light.position.set( 0, 10, 0);
    scene.add( light );
-   const light4 = new THREE.PointLight( 0xDC143C, 7, 1800 );
+   const light4 = new THREE.PointLight( 0xBC6FF1, 15, 1800 );
    light4.position.set( 0, 10, 0);
    scene.add( light4 );
-   const light2 = new THREE.PointLight( 0xDC143C, 7, 1800 );
+   const light2 = new THREE.PointLight( 0xBC6FF1, 15, 1800 );
    light2.position.set( -20, 10, 0);
    scene.add( light2 );
-   const light3 = new THREE.PointLight( 0xDC143C, 7, 1800);
+   const light3 = new THREE.PointLight( 0xBC6FF1, 15, 1800);
    light3.position.set( 20, 10, 0);
    scene.add( light3 );
    const interactionManager = new InteractionManager(
@@ -146,9 +146,6 @@ document.getElementById('map').addEventListener('click',function(e){
     renderer.domElement
   );
 
-  
- 
-//control
 const controls = new OrbitControls( camera, renderer.domElement );
 controls.mouseButtons = {
 	LEFT: THREE.MOUSE.PAN,
@@ -159,10 +156,47 @@ controls.mouseButtons = {
 
 controls.update();
 
-    // function for re-rendering/animating the scene
     function tick() {
         requestAnimationFrame(tick);
         renderer.render(scene, camera);
     }
     tick();
 }, { once: true });
+
+
+// stats
+
+var ctx = document.getElementById("statspersos");
+var myChart = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: [ 
+    'Missions réussies',
+    'Missions en cours',
+    'Missions échouées'],
+ 
+    datasets: [{
+      data: [17, 5, 3],
+      backgroundColor: [
+        '#52057B',
+        '#892CDC',
+        '#BC6FF1'
+      ],
+        borderColor: "none",
+        borderWidth: 0,
+    }]
+  },
+  options: {
+   	cutoutPercentage: 40,
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+          display: true,
+          labels: {
+              color: 'rgb(255,255,255)',
+              position: 'left',
+          }
+      }
+  }
+}});
