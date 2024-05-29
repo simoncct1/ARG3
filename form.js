@@ -4,7 +4,7 @@ if(!localStorage.getItem("step")){
 step = localStorage.getItem("step")
 var currentTab = step; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
-
+var id = localStorage.getItem("id");
 function showTab(n) {
   for(i = 0; i < parseInt(currentTab)  ; i++){
     document.getElementsByClassName("step")[i].className += " finish";
@@ -38,7 +38,11 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
     //...the form gets submitted:
-    document.getElementById("regForm").submit();
+    fetch('https://api.conqueststories.be/user/badgearg/' + id, {
+            method: 'POST'
+          })
+    // alert("Félicitations, vous avez réussi.")
+    // window.location.replace('https://conqueststories.be/profil.html')
     return false;
   }
   // Otherwise, display the correct tab:
@@ -108,10 +112,10 @@ function lightUp(){
   }, 1000)
 }
 document.querySelector(".ndc").addEventListener('click', function(){
- document.getElementById("inp1").setAttribute("value", "11GHJX");
+ document.getElementById("inp1").setAttribute("value", "11-GHJX");
  lightUp();
 })
 document.querySelector(".ndc2").addEventListener('click', function(){
-  document.getElementById("inp1").setAttribute("value", "11GHJX");
+  document.getElementById("inp1").setAttribute("value", "11-GHJX");
   lightUp();
 })

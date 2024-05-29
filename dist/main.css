@@ -17,12 +17,12 @@ html, body {
 }
 #login-form input#conn {
   margin-top: 20px;
-  background-color: #52057B;
+  background-color: #161616;
   padding: 7px;
 }
 #login-form input {
   margin-top: 13px;
-  background-color: #52057B;
+  background-color: #161616;
   padding: 7px;
 }
 #login-form input#conn:hover {
@@ -869,4 +869,20 @@ form button:hover {
 
 .ndc, .ndc2 {
   cursor: url(https://cur.cursors-4u.net/symbols/sym-7/sym780.cur), auto !important;
+}
+
+#LOL {
+  display: none;
+}
+
+@media screen and (max-width: 970px) {
+  #wrapper, .log-in-form {
+    display: none !important;
+  }
+
+  #LOL {
+    display: block !important;
+    color: #FAFAFA;
+    font-family: "Montserrat", sans-serif;
+  }
 }

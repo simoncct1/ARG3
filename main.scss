@@ -27,13 +27,13 @@ html,body{
  } 
  input#conn{
   margin-top: 20px;
-  background-color: $darkpurple;
+  background-color: $grey;
   padding: 7px;
 
  }
  input{
   margin-top: 13px;
-  background-color: $darkpurple;
+  background-color: $grey;
   padding: 7px;
 
  }
@@ -811,6 +811,7 @@ form{
     box-shadow: $innershadow;
     border: none;
     color: white;
+    
     font-size: 12pt;
     padding: 3px;
     font-family: 'Montserrat';
@@ -928,3 +929,16 @@ form{
   .ndc, .ndc2{
     cursor: url(https://cur.cursors-4u.net/symbols/sym-7/sym780.cur), auto !important;
   }
+  #LOL{
+    display: none;
+   
+  }
+
+@media screen and (max-width: 970px) {
+  #wrapper, .log-in-form{display: none !important;}
+  #LOL{
+    display: block !important;
+    color: #FAFAFA;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
